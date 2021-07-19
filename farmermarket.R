@@ -1,6 +1,4 @@
-#Name- Soumya Gummalla, #Section 04, Course ID- IE 6600
-
-#Problem 1
+#Author- Soumya Gummalla
 library(dplyr)
 
 farmers_market_info$State<-tolower(farmers_market_info$State)
@@ -29,7 +27,7 @@ region_market <- ggplot(State, aes(x = reorder(Var1,Freq), y = Freq))+ geom_bar(
   xlab("Region") + ylab("Number of Markets")+ theme( plot.title = element_text(color = "steel blue", size = 20, face = "bold"),axis.text=element_text(size=12),axis.title=element_text(color = "steel blue",size=14,face="bold"))+coord_flip()
 region_market 
 
-#Problem 2
+
 
 library(stringr)
 library(lubridate)
@@ -71,7 +69,6 @@ Farm_Year<-ggplot(startyear, mapping = aes(x = Var1, y = Freq, group=1) ) + geom
 Farm_Year
 
 
-#Problem 3
 library(plyr)
 library(tidyr)
 #selecting all the columns that have information about different products
@@ -110,7 +107,7 @@ produceplot <- ggplot(produce, aes(x = reorder(Type_of_produce, No_of_Markets), 
 
 produceplot
 
-#Problem 4
+
 #selecting all the columns with payments 
 payment <- farmers_market_info%>%
   select(24:28)
@@ -138,7 +135,7 @@ paymentplot <- ggplot(payment, aes(x = reorder(Type_of_payment,Yes), y = Yes))+ 
   xlab("Type of Payment") + ylab("Count")+theme( plot.title = element_text(color = "darkgreen", size = 20, face = "bold"),axis.text=element_text(size=12),axis.title=element_text(color = "darkgreen",size=14,face="bold"))
 paymentplot
 
-#Problem 5
+
 #getting the required columns
 farm<-farmers_market_info
 Payment_State<- farm%>%
